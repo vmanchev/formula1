@@ -1,0 +1,75 @@
+body {
+    background: #e1e1e1;
+}
+
+.navbar {
+    margin-bottom: 30px;
+}
+
+.driver {
+    margin-bottom: 30px;
+}
+
+.driver__info {
+    border-bottom: 1px solid rgba(0, 0, 0, .125);
+}
+
+.driver__photo {
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+.driver__name {
+    line-height: 65px;
+    margin-bottom: 0;
+}
+
+.driver__constructor {
+    background-color: #f7f7f7;
+    display: flex;
+    justify-content: space-between;
+    line-height: 32px;
+}
+
+.profile {
+    margin-bottom: 20px;
+}
+
+.profile .driver__stats {
+    columns: 1;
+}
+
+@media screen and (min-width: 768px) {
+    .profile .driver__stats {
+        columns: 2;
+    }
+}
+
+.last-viewed__driver {
+    margin-bottom: 10px;
+}
+
+.last-viewed__driver .driver__photo {
+    width: 45px;
+}
+
+.last-viewed__driver .driver__name {
+    line-height: 45px;
+    font-size: 1.1rem;
+}
+
+.item {
+    margin-bottom: 30px;
+    line-height: 32px;
+}
+
+.item__title {
+    margin-bottom: 0;
+    font-size: 1.1rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.item__description {
+    font-size: 1.1rem;
+}
