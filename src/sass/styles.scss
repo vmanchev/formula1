@@ -2,5 +2,33 @@
 @import '../../node_modules/bootstrap/scss/bootstrap.scss';
 body {
     background: $bodyBackground;
-    overflow: scroll;
+    overflow-y: scroll;
+}
+
+.item {
+    margin-bottom: 30px;
+    line-height: 32px;
+    &__title {
+        white-space: nowrap;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        line-height: 32px;
+        margin-bottom: 0;
+        font-size: 1.1rem;
+    }
+    &__description {
+        font-size: 1.1rem;
+    }
+    &__photo {
+        height: 260px;
+        @media screen and (min-width: 768px) {
+            height: 190px;
+        }
+    }
+    &__link {
+        &--external {
+            width: 25px;
+        }
+    }
 }

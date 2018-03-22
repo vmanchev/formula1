@@ -22,9 +22,9 @@ import { DriversService } from '../services/drivers.service';
 
 
 const driverMock = new Driver();
-driverMock.givenName = 'John';
-driverMock.familyName = 'Doe';
-driverMock.driverId = 'johndoe';
+driverMock.givenName = 'Fernando';
+driverMock.familyName = 'Alonso';
+driverMock.driverId = 'alonso';
 
 const constructorMock = new Constructor();
 constructorMock.name = 'Mercedes';

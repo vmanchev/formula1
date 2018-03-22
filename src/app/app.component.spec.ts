@@ -10,6 +10,7 @@ import { ConstructorsComponent } from './constructors/constructors.component';
 import { CircuitsComponent } from './circuits/circuits.component';
 import { DriverNamePipe } from './pipes/driver-name.pipe';
 import { ConstructorNamePipe } from './pipes/constructor-name.pipe';
+import { CircuitLocalityPipe } from './pipes/circuit-locality.pipe';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
@@ -22,7 +23,8 @@ describe('AppComponent', () => {
         ConstructorsComponent,
         CircuitsComponent,
         DriverNamePipe,
-        ConstructorNamePipe
+        ConstructorNamePipe,
+        CircuitLocalityPipe
       ],
       imports: [
         RouterTestingModule,

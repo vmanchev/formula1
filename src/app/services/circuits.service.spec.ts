@@ -2,28 +2,28 @@ import { TestBed, inject } from '@angular/core/testing';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 import { HttpRequest } from '@angular/common/http/src/request';
 
-import { ConstructorsService } from './constructors.service';
+import { CircuitsService } from './circuits.service';
 import { environment } from '../../environments/environment';
 import { ApiResponse } from '../models/api-response.model';
 
 const apiResponseMock = new ApiResponse();
 
-describe('ConstructorsService', () => {
+describe('CircuitsService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [HttpClientTestingModule],
-      providers: [ConstructorsService]
+      providers: [CircuitsService]
     });
   });
 
-  it('should be created', inject([ConstructorsService], (service: ConstructorsService) => {
+  it('should be created', inject([CircuitsService], (service: CircuitsService) => {
     expect(service).toBeTruthy();
   }));
 
   describe('getAll', () => {
 
-    it('should call the api to get all constructors', inject([HttpTestingController, ConstructorsService],
-      (httpMock: HttpTestingController, service: ConstructorsService) => {
+    it('should call the api to get all circuits', inject([HttpTestingController, CircuitsService],
+      (httpMock: HttpTestingController, service: CircuitsService) => {
 
         service.getAll().subscribe(
           success => {
@@ -33,7 +33,7 @@ describe('ConstructorsService', () => {
 
         httpMock.expectOne((request: HttpRequest<any>) => {
           return request.method === 'GET' &&
-            request.url === environment.apiUrl + '/constructors.json';
+            request.url === environment.apiUrl + '/circuits.json';
         }).flush(apiResponseMock);
 
         httpMock.verify();
