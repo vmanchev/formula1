@@ -1,0 +1,15 @@
+.item {
+    margin-bottom: 30px;
+    line-height: 32px;
+}
+
+.item__title {
+    margin-bottom: 0;
+    font-size: 1.1rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.item__description {
+    font-size: 1.1rem;
+}
