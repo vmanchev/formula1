@@ -1,0 +1,13 @@
+@import '~sass/variables';
+.navbar {
+    margin-bottom: 30px;
+    padding-top: 0;
+    padding-bottom: 0;
+    line-height: 35px;
+    .nav-link {
+        &.active {
+            border-top: solid 2px $navbarActive;
+            padding-top: 6px;
+        }
+    }
+}

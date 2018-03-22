@@ -1,0 +1,21 @@
+@import '~sass/variables';
+.driver {
+    margin-bottom: 30px;
+    &__info {
+        border-bottom: 1px solid $delimiterColor;
+    }
+    &__photo {
+        border-radius: 50%;
+        margin-right: 20px;
+    }
+    &__name {
+        line-height: 65px;
+        margin-bottom: 0;
+    }
+    &__constructor {
+        background-color: #f7f7f7;
+        display: flex;
+        justify-content: space-between;
+        line-height: 32px;
+    }
+}
