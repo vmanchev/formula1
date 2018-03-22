@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { DriversService } from '../services/drivers.service';
+import { ApiResponse } from '../models/api-response.model';
+import { DriverStanding } from '../models/driver-standing.model';
 
 @Component({
   selector: 'app-drivers',
@@ -7,9 +10,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DriversComponent implements OnInit {
 
-  constructor() { }
+  public driverStadings: DriverStanding[];
+
+  constructor(
+    public driversService: DriversService
+  ) { }
 
   ngOnInit() {
+    this.driversService.getAll().subscribe(
+      (apiResponse: ApiResponse) => {
+        this.driverStadings = apiResponse.MRData.StandingsTable.StandingsLists[0].DriverStandings;
+      }
+    );
   }
 
 }
