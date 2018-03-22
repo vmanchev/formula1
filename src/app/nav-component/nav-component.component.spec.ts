@@ -8,9 +8,9 @@ describe('NavComponentComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ NavComponentComponent ]
+      declarations: [NavComponentComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
@@ -21,5 +21,20 @@ describe('NavComponentComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  describe('toggleCollapsed', () => {
+    it('shold set collapse to opposite value', () => {
+
+      // initial value
+      component.collapsed = false;
+
+      component.toggleCollapsed();
+      expect(component.collapsed).toBeTruthy();
+
+      // flip
+      component.toggleCollapsed();
+      expect(component.collapsed).toBeFalsy();
+    });
   });
 });
