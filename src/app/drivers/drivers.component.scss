@@ -11,9 +11,14 @@
     &__name {
         line-height: 65px;
         margin-bottom: 0;
+        color: $linkColor;
+        &:hover {
+            cursor: pointer;
+            text-decoration: underline;
+        }
     }
     &__constructor {
-        background-color: #f7f7f7;
+        background-color: $cardBackground;
         display: flex;
         justify-content: space-between;
         line-height: 32px;

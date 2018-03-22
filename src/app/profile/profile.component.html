@@ -1,24 +1,22 @@
-<div class="row">
+<div class="row" *ngIf="driver">
 
   <div class="col-md-8 col-lg-9">
     <div class="card profile">
       <div class="card-header driver__info">
         <div class="media">
-          <img class="driver__photo" src="http://via.placeholder.com/65x65" alt="Generic placeholder image">
+          <img class="driver__photo" src="/assets/img/drivers/{{driver.driverId}}.png" alt="{{ driver | driverName }}">
           <div class="media-body">
-            <h5 class="driver__name">
-              <a href="driver.html">Fernando Alonso</a>
-            </h5>
+            <h5 class="driver__name">{{ driver | driverName }}</h5>
           </div>
         </div>
       </div>
       <div class="card-body">
         <ul class="list-unstyled driver__stats">
-          <li>Nationality: German</li>
-          <li>Date of birth: 1985-05-27</li>
-          <li>Starting number: 6</li>
+          <li>Nationality: {{ driver.nationality }}</li>
+          <li>Date of birth: {{ driver.dateOfBirth }}</li>
+          <li>Starting number: {{ driver.permanentNumber }}</li>
           <li>Biography:
-            <a href="http://en.wikipedia.org/wiki/Nico_Rosberg">http://en.wikipedia.org/wiki/Nico_Rosberg</a>
+            <a href="{{driver.url}}">{{driver.url}}</a>
           </li>
         </ul>
       </div>

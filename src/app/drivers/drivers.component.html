@@ -5,8 +5,8 @@
         <div class="media">
           <img class="driver__photo" src="/assets/img/drivers/{{driverStanding.Driver.driverId}}.png" alt="{{ driverStanding.Driver | driverName }}">
           <div class="media-body">
-            <h5 class="driver__name">
-              <a [routerLink]="['/profile', driverStanding.Driver.driverId]">{{ driverStanding.Driver | driverName }}</a>
+            <h5 class="driver__name" (click)="goToDriver(driverStanding.Driver)">
+              {{ driverStanding.Driver | driverName }}
             </h5>
           </div>
         </div>

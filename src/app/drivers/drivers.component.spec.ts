@@ -18,7 +18,7 @@ import { DriverStanding } from '../models/driver-standing.model';
 import { Driver } from '../models/driver.model';
 import { Constructor } from '../models/constructor.model';
 import { DriversService } from '../services/drivers.service';
-
+import { SelectedDriverService } from '../services/selected-driver.service';
 
 
 const driverMock = new Driver();
@@ -74,7 +74,8 @@ describe('DriversComponent', () => {
         HttpClientTestingModule
       ],
       providers: [
-        { provide: DriversService, useClass: DriversServiceStub }
+        { provide: DriversService, useClass: DriversServiceStub },
+        SelectedDriverService
       ],
       schemas: [NO_ERRORS_SCHEMA]
     })
@@ -108,6 +109,22 @@ describe('DriversComponent', () => {
       expect(component.driverStadings).toEqual([driverStanding]);
     }));
 
+  });
+
+  describe('goToDriver', () => {
+    beforeEach(() => {
+      spyOn(component.selectedDriverService, 'set').and.callThrough();
+      spyOn(component.router, 'navigate');
+      component.goToDriver(driverMock);
+    });
+
+    it('should save the selected driver in proxy service', () => {
+      expect(component.selectedDriverService.set).toHaveBeenCalledWith(driverMock);
+    });
+
+    it('should redirect to driver profile page by driver id', () => {
+      expect(component.router.navigate).toHaveBeenCalledWith(['/profile', 'alonso']);
+    });
   });
 
 });
