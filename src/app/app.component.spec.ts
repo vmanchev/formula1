@@ -2,6 +2,7 @@ import { TestBed, async } from '@angular/core/testing';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { RouterTestingModule } from '@angular/router/testing';
 import { APP_BASE_HREF } from '@angular/common';
+import { BlockUIModule } from 'ng-block-ui';
 import { AppComponent } from './app.component';
 import { NavComponentComponent } from './nav-component/nav-component.component';
 import { AppRoutingModule } from './app-routing/app-routing.module';
@@ -29,7 +30,8 @@ describe('AppComponent', () => {
       ],
       imports: [
         RouterTestingModule,
-        AppRoutingModule
+        AppRoutingModule,
+        BlockUIModule
       ],
       providers: [
         { provide: APP_BASE_HREF, useValue: '/' }

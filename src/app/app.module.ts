@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { BlockUIModule } from 'ng-block-ui';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing/app-routing.module';
 import { DriversComponent } from './drivers/drivers.component';
@@ -33,7 +34,8 @@ import { LastViewedComponent } from './last-viewed/last-viewed.component';
   imports: [
     BrowserModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BlockUIModule
   ],
   providers: [
     DriversService,

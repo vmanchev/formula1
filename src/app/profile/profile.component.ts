@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
+import { BlockUI, NgBlockUI } from 'ng-block-ui';
+
 import { SelectedDriverService } from '../services/selected-driver.service';
 import { Driver } from '../models/driver.model';
 import { DriversService } from '../services/drivers.service';
@@ -13,6 +15,8 @@ export class ProfileComponent implements OnInit {
 
   public driver: Driver;
   public latestViewed: Driver[];
+
+  @BlockUI() blockUI: NgBlockUI;
 
   constructor(
     public router: Router,
@@ -46,6 +50,7 @@ export class ProfileComponent implements OnInit {
    * @param driverId
    */
   getDriver(driverId) {
+
     this.selectedDriverService.selectedDriver$.subscribe(
       driver => {
         if (!driver) {
@@ -65,8 +70,14 @@ export class ProfileComponent implements OnInit {
    * @param driverId
    */
   getDriverById(driverId: string) {
+
+    this.blockUI.start();
+
     this.driversService.getById(driverId).subscribe(
-      result => this.driver = result.MRData.DriverTable.Drivers[0]
+      result => {
+        this.driver = result.MRData.DriverTable.Drivers[0];
+        this.blockUI.stop();
+      }
     );
   }
 

@@ -1,3 +1,4 @@
+@import '~sass/variables';
 .last-viewed {
     &__driver {
         margin-bottom: 10px;
@@ -10,6 +11,11 @@
             &__name {
                 line-height: 45px;
                 font-size: 1.1rem;
+                color: $linkColor;
+                &:hover {
+                    cursor: pointer;
+                    text-decoration: underline;
+                }
             }
         }
     }
