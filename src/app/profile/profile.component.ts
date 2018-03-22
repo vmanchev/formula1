@@ -12,6 +12,7 @@ import { DriversService } from '../services/drivers.service';
 export class ProfileComponent implements OnInit {
 
   public driver: Driver;
+  public latestViewed: Driver[];
 
   constructor(
     public router: Router,
@@ -21,7 +22,6 @@ export class ProfileComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-
 
     this.route.params.subscribe(
       params => {
@@ -33,6 +33,8 @@ export class ProfileComponent implements OnInit {
         this.getDriver(params.id);
       }
     );
+
+    this.latestViewed = this.selectedDriverService.getLatest();
   }
 
   /**

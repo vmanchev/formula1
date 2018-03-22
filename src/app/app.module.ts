@@ -15,6 +15,7 @@ import { SelectedDriverService } from './services/selected-driver.service';
 import { DriverNamePipe } from './pipes/driver-name.pipe';
 import { ConstructorNamePipe } from './pipes/constructor-name.pipe';
 import { CircuitLocalityPipe } from './pipes/circuit-locality.pipe';
+import { LastViewedComponent } from './last-viewed/last-viewed.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { CircuitLocalityPipe } from './pipes/circuit-locality.pipe';
     CircuitsComponent,
     DriverNamePipe,
     ConstructorNamePipe,
-    CircuitLocalityPipe
+    CircuitLocalityPipe,
+    LastViewedComponent
   ],
   imports: [
     BrowserModule,
