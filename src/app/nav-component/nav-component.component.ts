@@ -7,9 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavComponentComponent implements OnInit {
 
+  collapsed = true;
+
   constructor() { }
 
   ngOnInit() {
   }
 
+  toggleCollapsed(): void {
+    this.collapsed = !this.collapsed;
+  }
 }
