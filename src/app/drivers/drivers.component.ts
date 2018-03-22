@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { BlockUI, NgBlockUI } from 'ng-block-ui';
 
 import { DriversService } from '../services/drivers.service';
 import { SelectedDriverService } from '../services/selected-driver.service';
@@ -16,6 +17,8 @@ export class DriversComponent implements OnInit {
 
   public driverStadings: DriverStanding[];
 
+  @BlockUI() blockUI: NgBlockUI;
+
   constructor(
     public router: Router,
     public driversService: DriversService,
@@ -23,9 +26,13 @@ export class DriversComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+
+    this.blockUI.start();
+
     this.driversService.getAll().subscribe(
       (apiResponse: ApiResponse) => {
         this.driverStadings = apiResponse.MRData.StandingsTable.StandingsLists[0].DriverStandings;
+        this.blockUI.stop();
       }
     );
   }
