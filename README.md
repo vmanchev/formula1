@@ -16,3 +16,5 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 ## Running unit tests
 
 Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+
+Run `ng test --code-coverage` to generate the code coverage preview. It can be found in the **coverage** folder. Current code coverage: 100%.
