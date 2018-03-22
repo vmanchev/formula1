@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ConstructorsService } from '../services/constructors.service';
+import { Constructor } from '../models/constructor.model';
+import { ApiResponse } from '../models/api-response.model';
 
 @Component({
   selector: 'app-constructors',
@@ -7,9 +10,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ConstructorsComponent implements OnInit {
 
-  constructor() { }
+  public constructors: Constructor[];
+
+  constructor(
+    public constructorsService: ConstructorsService
+  ) { }
 
   ngOnInit() {
+    this.constructorsService.getAll().subscribe(
+      (apiResponse: ApiResponse) => {
+        this.constructors = apiResponse.MRData.ConstructorTable.Constructors;
+      }
+    );
   }
 
 }
