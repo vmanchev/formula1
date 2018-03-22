@@ -20,21 +20,6 @@
     }
 }
 
-.last-viewed {
-    &__driver {
-        margin-bottom: 10px;
-        .driver {
-            &__photo {
-                width: 45px;
-            }
-            &__name {
-                line-height: 45px;
-                font-size: 1.1rem;
-            }
-        }
-    }
-}
-
 .item {
     margin-bottom: 30px;
     line-height: 32px;
