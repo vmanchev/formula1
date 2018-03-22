@@ -1,55 +1,25 @@
 <div class="row">
 
-  <div class="col-sm-4">
+  <div class="col-md-6 col-lg-4" *ngFor="let circuit of circuits">
     <div class="card item">
-      <img class="card-img-top" src="http://via.placeholder.com/360x200" alt="Card image cap">
+      <img class="card-img-top" src="/assets/img/circuits/{{circuit.circuitId}}.png" alt="{{circuit.name}}" class="item__photo">
       <div class="card-body">
-        <h5 class="card-title item__title">
-          Name: Albert Park
-          <img src="http://via.placeholder.com/32x32" alt="Card image cap">
-        </h5>
-        <p class="card-text item__description">Locality: Melbourne, Australia</p>
+        <div class="row">
+          <div class="col-10">
+            <h5 class="card-title item__title">
+              Name: {{ circuit.circuitName }}
+            </h5>
+          </div>
+          <div class="col-2 text-right">
+            <a href="{{circuit.url}}" target="_blank">
+              <img src="/assets/img/external-link.png" alt="{{ circuit.name }}" class="item__link--external">
+            </a>
+          </div>
+        </div>
+        <p class="card-text item__description">Locality: {{ circuit | circuitLocality }}</p>
       </div>
     </div>
   </div>
 
-  <div class="col-sm-4">
-    <div class="card item">
-      <img class="card-img-top" src="http://via.placeholder.com/360x200" alt="Card image cap">
-      <div class="card-body">
-        <h5 class="card-title item__title">
-          Name: Albert Park
-          <img src="http://via.placeholder.com/32x32" alt="Card image cap">
-        </h5>
-        <p class="card-text item__description">Locality: Melbourne, Australia</p>
-      </div>
-    </div>
-  </div>
-
-  <div class="col-sm-4">
-    <div class="card item">
-      <img class="card-img-top" src="http://via.placeholder.com/360x200" alt="Card image cap">
-      <div class="card-body">
-        <h5 class="card-title item__title">
-          Name: Albert Park
-          <img src="http://via.placeholder.com/32x32" alt="Card image cap">
-        </h5>
-        <p class="card-text item__description">Locality: Melbourne, Australia</p>
-      </div>
-    </div>
-  </div>
-
-  <div class="col-sm-4">
-    <div class="card item">
-      <img class="card-img-top" src="http://via.placeholder.com/360x200" alt="Card image cap">
-      <div class="card-body">
-        <h5 class="card-title item__title">
-          Name: Albert Park
-          <img src="http://via.placeholder.com/32x32" alt="Card image cap">
-        </h5>
-        <p class="card-text item__description">Locality: Melbourne, Australia</p>
-      </div>
-    </div>
-  </div>
 
 </div>

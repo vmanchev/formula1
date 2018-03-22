@@ -10,8 +10,10 @@ import { ConstructorsComponent } from './constructors/constructors.component';
 import { CircuitsComponent } from './circuits/circuits.component';
 import { DriversService } from './services/drivers.service';
 import { ConstructorsService } from './services/constructors.service';
+import { CircuitsService } from './services/circuits.service';
 import { DriverNamePipe } from './pipes/driver-name.pipe';
 import { ConstructorNamePipe } from './pipes/constructor-name.pipe';
+import { CircuitLocalityPipe } from './pipes/circuit-locality.pipe';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,8 @@ import { ConstructorNamePipe } from './pipes/constructor-name.pipe';
     ConstructorsComponent,
     CircuitsComponent,
     DriverNamePipe,
-    ConstructorNamePipe
+    ConstructorNamePipe,
+    CircuitLocalityPipe
   ],
   imports: [
     BrowserModule,
@@ -31,7 +34,8 @@ import { ConstructorNamePipe } from './pipes/constructor-name.pipe';
   ],
   providers: [
     DriversService,
-    ConstructorsService
+    ConstructorsService,
+    CircuitsService
   ],
   bootstrap: [AppComponent]
 })
