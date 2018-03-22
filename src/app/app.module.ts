@@ -9,6 +9,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { ConstructorsComponent } from './constructors/constructors.component';
 import { CircuitsComponent } from './circuits/circuits.component';
 import { DriversService } from './services/drivers.service';
+import { ConstructorsService } from './services/constructors.service';
 import { DriverNamePipe } from './pipes/driver-name.pipe';
 import { ConstructorNamePipe } from './pipes/constructor-name.pipe';
 
@@ -29,7 +30,8 @@ import { ConstructorNamePipe } from './pipes/constructor-name.pipe';
     AppRoutingModule
   ],
   providers: [
-    DriversService
+    DriversService,
+    ConstructorsService
   ],
   bootstrap: [AppComponent]
 })

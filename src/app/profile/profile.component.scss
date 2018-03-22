@@ -1,44 +1,39 @@
 @import '../drivers/drivers.component.scss';
-
 .profile {
     margin-bottom: 20px;
-}
-
-.profile .driver__stats {
-    columns: 1;
-}
-
-@media screen and (min-width: 768px) {
-    .profile .driver__stats {
-        columns: 2;
+    .driver__stats {
+        columns: 1;
+        @media screen and (min-width: 768px) {
+            columns: 2;
+        }
     }
 }
 
-.last-viewed__driver {
-    margin-bottom: 10px;
-}
-
-.last-viewed__driver .driver__photo {
-    width: 45px;
-}
-
-.last-viewed__driver .driver__name {
-    line-height: 45px;
-    font-size: 1.1rem;
+.last-viewed {
+    &__driver {
+        margin-bottom: 10px;
+        .driver {
+            &__photo {
+                width: 45px;
+            }
+            &__name {
+                line-height: 45px;
+                font-size: 1.1rem;
+            }
+        }
+    }
 }
 
 .item {
-  margin-bottom: 30px;
-  line-height: 32px;
-}
-
-.item__title {
-  margin-bottom: 0;
-  font-size: 1.1rem;
-  display: flex;
-  justify-content: space-between;
-}
-
-.item__description {
-  font-size: 1.1rem;
+    margin-bottom: 30px;
+    line-height: 32px;
+    &__title {
+        margin-bottom: 0;
+        font-size: 1.1rem;
+        display: flex;
+        justify-content: space-between;
+    }
+    &__description {
+        font-size: 1.1rem;
+    }
 }
